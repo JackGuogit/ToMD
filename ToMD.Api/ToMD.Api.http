@@ -1,0 +1,13 @@
+@ToMD.Api_HostAddress = http://localhost:5183
+
+
+GET {{ToMD.Api_HostAddress}}/tomd/getmd
+Accept: application/json
+
+###
+Post {{ToMD.Api_HostAddress}}/tomd/getmd/guo502
+Accept: application/json
+
+###
+Get {{ToMD.Api_HostAddress}}/tomd/getmd/downlaodmd/nodify-avalonia.md?token=guo502
+Accept: application/json
