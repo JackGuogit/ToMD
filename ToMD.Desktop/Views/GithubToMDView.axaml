@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="using:ToMD.Desktop.ViewModels"
+			 x:DataType="vm:GithubToMDViewModel"
+             x:Class="ToMD.Desktop.Views.GithubToMDView">
+	<UserControl.DataContext>
+		<vm:GithubToMDViewModel />
+	</UserControl.DataContext>
+
+	<Grid RowDefinitions="*,*">
+		<StackPanel Grid.Row="0">
+			<TextBox Watermark="仓库类型" Text="{Binding RepoType}"></TextBox>
+			<TextBox Watermark="仓库名称" Text="{Binding Repo}"></TextBox>
+			<TextBox Watermark="分支" Text="{Binding Branch}"></TextBox>
+			<TextBox Watermark="用户名" Text="{Binding Username}"></TextBox>
+			<TextBox Watermark="PAT" Text="{Binding Token}"></TextBox>
+			<TextBox Watermark="存储路径" Text="{Binding RepoPath}"></TextBox>
+			<TextBox Watermark="排除文件" Text="{Binding Exclude}"></TextBox>
+			<Button Content="ToMD" Command="{Binding Confirm}"></Button>
+		</StackPanel>
+		
+	</Grid>
+	
+</UserControl>

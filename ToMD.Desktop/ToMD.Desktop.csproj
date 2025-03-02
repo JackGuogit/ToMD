@@ -9,17 +9,29 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="Models\"/>
-        <AvaloniaResource Include="Assets\**"/>
+        <Folder Include="Models\" />
+        <AvaloniaResource Include="Assets\**" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.5"/>
-        <PackageReference Include="Avalonia.Desktop" Version="11.2.5"/>
-        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.5"/>
-        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.5"/>
+        <PackageReference Include="Avalonia" Version="11.2.5" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.2.5" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.5" />
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.5" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.5"/>
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1"/>
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.5" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+        <PackageReference Include="Semi.Avalonia" Version="11.2.1.5" />
+        <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ToMD.Core\ToMD.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\GithubToMDView.axaml.cs">
+        <DependentUpon>GithubToMDView.axaml</DependentUpon>
+      </Compile>
     </ItemGroup>
 </Project>

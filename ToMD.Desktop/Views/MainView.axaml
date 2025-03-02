@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="using:ToMD.Desktop.ViewModels"
+			 xmlns:views="clr-namespace:ToMD.Desktop.Views"
+			 x:DataType="vm:MainViewModel"
+             x:Class="ToMD.Desktop.Views.MainView">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainViewModel />
+	</Design.DataContext>
+	<UserControl.DataContext>
+		<vm:MainViewModel />
+	</UserControl.DataContext>
+	<Grid RowDefinitions="20,*" ColumnDefinitions="40,*">
+		<!--<TextBlock Text="Hello World!" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" />
+		<TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Greeting,Mode=TwoWay}" HorizontalAlignment="Center" FontStyle="Normal" Background="Blue" VerticalAlignment="Center" />
+		<ProgressBar Grid.Column="1" Grid.Row="1" Value="50" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+		<views:GithubToMDView Grid.Row="1" Grid.Column="2"></views:GithubToMDView>
+	
+	</Grid>
+</UserControl>
